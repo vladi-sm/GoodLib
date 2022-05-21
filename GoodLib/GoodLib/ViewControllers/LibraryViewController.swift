@@ -65,25 +65,7 @@ extension LibraryViewController: UITableViewDataSource { // расширение
         }
         cell.configureCellData(bookData: bookData)
         return cell
-//        var cell: UITableViewCell
-//        if let reuseCell = tableView.dequeueReusableCell(withIdentifier: "newBookCellIdentifier") {
-//            print("Используем старую ячейку для строки с индексом \(indexPath.row)")
-//            cell = reuseCell
-//        } else {
-//            print("Создаем новую ячейку для строки с индексом \(indexPath.row)")
-//            cell = UITableViewCell(style: .default, reuseIdentifier: "newBookCellIdentifier")
-//        }
-//        configure(cell: &cell, for: indexPath)
-//        return cell
     }
-    
-    //метод для обновления ячейки
-//    private func configure(cell: inout UITableViewCell, for indexPath: IndexPath) {
-//        var configuration = cell.defaultContentConfiguration()
-//        configuration.text = newBooks[indexPath.row].title
-//        configuration.secondaryText = newBooks[indexPath.row].author + " (" + newBooks[indexPath.row].totalPages + " " + "стр.)"
-//        cell.contentConfiguration = configuration
-//    }
     
     //метод загрузки новых книг
     private func loadNewBooks(){
@@ -95,9 +77,9 @@ extension LibraryViewController {
     
     private func configureNavigationBar(){
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "GoodLibDarkPurple")
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.backgroundColor = UIColor(named: "GoodLibPastelYellow")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor(named: "GoodLibBrown") ?? UIColor.black]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor(named: "GoodLibBrown") ?? UIColor.black]
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -131,13 +113,17 @@ extension LibraryViewController {
             guard let bookTitle = alertController.textFields?[0].text,
                   let bookAuthor = alertController.textFields?[1].text,
                   let bookStatus = alertController.textFields?[2].text,
-                  let bookPages = alertController.textFields?[3].text
+                  let bookPagesString = alertController.textFields?[3].text
             else{
                 return
             }
-            let bookPagesInt = Int(bookPages)
-            let book = NewBook(title: bookTitle, author: bookAuthor, status: bookStatus, totalPages: bookPagesInt!)
-            print(book.totalPages)
+            var totalBookPages = 0
+            if let bookPages = Int(bookPagesString){
+                totalBookPages += bookPages
+            } else {
+                totalBookPages = 0
+            }
+            let book = NewBook(title: bookTitle, author: bookAuthor, status: bookStatus, totalPages: totalBookPages)
             self.newBooks.append(book)
             self.tableView.reloadData()
         }

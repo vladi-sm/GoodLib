@@ -30,6 +30,9 @@ final class LibraryBookCell: UITableViewCell {
     
     private func cellDesignConfiguration(){
         self.bubbleView.layer.cornerRadius = 12
+        self.bubbleView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.bubbleView.layer.shadowRadius = 5
+        self.bubbleView.layer.shadowOpacity = 0.2
     }
     
     override func awakeFromNib() {
