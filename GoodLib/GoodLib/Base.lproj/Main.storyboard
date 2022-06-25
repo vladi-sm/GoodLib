@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HRa-Vv-tQx">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--GoodLib Track-->
+        <!--Library-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LibraryViewController" customModule="GoodLib" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryController" title="Library" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LibraryController" customModule="GoodLib" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qR5-Db-yfw">
-                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <rect key="frame" x="0.0" y="44" width="428" height="799"/>
                                 <color key="backgroundColor" name="GoodLibSunlight"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="P5U-i5-4J9"/>
@@ -26,7 +26,7 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-5Y-Vhr">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="843" width="428" height="49"/>
                                 <color key="backgroundColor" name="GoodLibPastelYellow"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iJ2-KM-c8Z"/>
@@ -53,14 +53,14 @@
                             <constraint firstItem="qR5-Db-yfw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zyn-S9-xAE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GoodLib Track" id="dUK-Md-WlW"/>
+                    <navigationItem key="navigationItem" title=" Мои книги" largeTitleDisplayMode="never" id="dUK-Md-WlW"/>
                     <connections>
                         <outlet property="tableView" destination="qR5-Db-yfw" id="a3U-Aj-rNJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849.2753623188407" y="69.642857142857139"/>
+            <point key="canvasLocation" x="2483" y="70"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Cwu-ev-oZg">
@@ -68,7 +68,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HRa-Vv-tQx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Zsv-j6-ydQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -80,26 +80,173 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tUl-Ut-xkj"/>
+                        <segue destination="D0h-Rr-1zM" kind="relationship" relationship="rootViewController" id="cS5-bm-Pof"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="39W-gF-vqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="69.642857142857139"/>
         </scene>
+        <!--GoodLib Track-->
+        <scene sceneID="0h8-te-940">
+            <objects>
+                <viewController id="D0h-Rr-1zM" customClass="MainScreenController" customModule="GoodLib" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G6x-8e-G6M">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="fY6-RD-qqo">
+                                <rect key="frame" x="46" y="160.00000000000003" width="336" height="338.66666666666674"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hM5-D1-Aac">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="161.33333333333334"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="6T2-O6-Omk">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="161.33333333333334"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="books.vertical" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="058-SW-quv">
+                                                        <rect key="frame" x="0.0" y="-0.3333333333333286" width="160" height="130.33333333333334"/>
+                                                        <color key="tintColor" name="GoodLibBrown"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="130" id="gD4-K6-Evy"/>
+                                                            <constraint firstAttribute="width" constant="160" id="iZz-6p-ABe"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Мои книги" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5MQ-NX-ewz">
+                                                        <rect key="frame" x="0.0" y="134" width="160" height="27.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                        <color key="textColor" name="GoodLibBrown"/>
+                                                        <color key="highlightedColor" name="GoodLibBrown"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="5MQ-NX-ewz" firstAttribute="leading" secondItem="058-SW-quv" secondAttribute="leading" id="9tI-Ok-YXI"/>
+                                                    <constraint firstItem="5MQ-NX-ewz" firstAttribute="trailing" secondItem="058-SW-quv" secondAttribute="trailing" id="RjM-Cl-uY1"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="KkD-hR-3wk">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="161.33333333333334"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.text.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ByF-us-ds8">
+                                                        <rect key="frame" x="0.0" y="1.6666666666666572" width="160" height="127"/>
+                                                        <color key="tintColor" name="GoodLibBrown"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="130" id="aGf-9E-8oS"/>
+                                                            <constraint firstAttribute="width" constant="160" id="eqH-Fq-kKa"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вишлист" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bem-cA-YTm">
+                                                        <rect key="frame" x="0.0" y="134" width="160" height="27.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                        <color key="textColor" name="GoodLibBrown"/>
+                                                        <color key="highlightedColor" name="GoodLibBrown"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="bem-cA-YTm" firstAttribute="leading" secondItem="ByF-us-ds8" secondAttribute="leading" id="2qO-B4-zA5"/>
+                                                    <constraint firstItem="bem-cA-YTm" firstAttribute="trailing" secondItem="ByF-us-ds8" secondAttribute="trailing" id="xRa-DP-dws"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-gH-3Jz">
+                                        <rect key="frame" x="0.0" y="177.33333333333331" width="336" height="161.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="JwZ-hH-bFK">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="161.33333333333334"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checklist" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="sz2-ct-gb3">
+                                                        <rect key="frame" x="0.0" y="0.6666666666666714" width="160" height="128.66666666666669"/>
+                                                        <color key="tintColor" name="GoodLibBrown"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="XQ5-aq-WjT"/>
+                                                            <constraint firstAttribute="height" constant="130" id="hcm-kA-LNK"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прочитано" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-TQ-G54">
+                                                        <rect key="frame" x="0.0" y="134" width="160" height="27.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                        <color key="textColor" name="GoodLibBrown"/>
+                                                        <color key="highlightedColor" name="GoodLibBrown"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="wMD-TQ-G54" firstAttribute="leading" secondItem="sz2-ct-gb3" secondAttribute="leading" id="ntL-dg-3jp"/>
+                                                    <constraint firstItem="wMD-TQ-G54" firstAttribute="trailing" secondItem="sz2-ct-gb3" secondAttribute="trailing" id="vZx-Cy-qWZ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-DZ-ftf">
+                                                <rect key="frame" x="176" y="0.0" width="160" height="161.33333333333334"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magazine" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FOO-Ii-OfU">
+                                                        <rect key="frame" x="0.0" y="-0.6666666666666714" width="160" height="131.33333333333331"/>
+                                                        <color key="tintColor" name="GoodLibBrown"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="Td3-Vp-ln4"/>
+                                                            <constraint firstAttribute="height" constant="130" id="ZM4-Xp-Zwf"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Каталог" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rX2-z0-2Y3">
+                                                        <rect key="frame" x="0.0" y="134" width="160" height="27.333333333333343"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                                        <color key="textColor" name="GoodLibBrown"/>
+                                                        <color key="highlightedColor" name="GoodLibBrown"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="rX2-z0-2Y3" firstAttribute="leading" secondItem="FOO-Ii-OfU" secondAttribute="leading" id="7Dd-Gk-23o"/>
+                                                    <constraint firstItem="rX2-z0-2Y3" firstAttribute="trailing" secondItem="FOO-Ii-OfU" secondAttribute="trailing" id="WVq-dC-MmI"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XY3-EM-wJY"/>
+                        <color key="backgroundColor" name="GoodLibSunlight"/>
+                        <constraints>
+                            <constraint firstItem="fY6-RD-qqo" firstAttribute="top" secondItem="XY3-EM-wJY" secondAttribute="top" constant="20" id="9DH-9N-l7z"/>
+                            <constraint firstItem="fY6-RD-qqo" firstAttribute="centerX" secondItem="XY3-EM-wJY" secondAttribute="centerX" id="a4Y-FX-huG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="GoodLib Track" id="98H-u8-6ct"/>
+                    <connections>
+                        <outlet property="libraryStackView" destination="6T2-O6-Omk" id="b6j-dn-S6u"/>
+                        <outlet property="magazineStackView" destination="4xC-DZ-ftf" id="00h-Pz-dYC"/>
+                        <outlet property="readlistStackView" destination="JwZ-hH-bFK" id="ZHh-HO-WOU"/>
+                        <outlet property="wishlistStackView" destination="KkD-hR-3wk" id="vBa-CV-Fm7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YwN-PX-zbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708.6956521739132" y="69.642857142857139"/>
+        </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemBrownColor"/>
     <resources>
+        <image name="books.vertical" catalog="system" width="128" height="107"/>
+        <image name="checklist" catalog="system" width="128" height="105"/>
+        <image name="heart.text.square" catalog="system" width="128" height="114"/>
+        <image name="magazine" catalog="system" width="113" height="128"/>
         <namedColor name="GoodLibBrown">
-            <color red="0.30980393290000002" green="0.21960783" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31000000238418579" green="0.2199999988079071" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="GoodLibPastelYellow">
-            <color red="0.91372549530000002" green="0.85882353779999998" blue="0.63137257099999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.9137254901960784" green="0.85882352941176465" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="GoodLibSunlight">
-            <color red="0.93725490570000003" green="0.91372549530000002" blue="0.84705877299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93725490196078431" green="0.9137254901960784" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController {
+class LibraryController: UIViewController {
 
     private var newBooks: [BookProtocol] = [] {
         didSet { // наблюдатель свойства
@@ -18,21 +18,21 @@ class LibraryViewController: UIViewController {
     }
     var storage: BookStorageProtocol!
     @IBOutlet var tableView: UITableView!
-
-    @IBAction func showAddBookAlert() {
-        createAddBookAlert()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         storage = BookStorage()
         loadNewBooks()
-        configureNavigationBar()
+        // configureNavigationBar()
         configureTableViewCell()
+    }
+    
+    @IBAction func showAddBookAlert() {
+        createAddBookAlert()
     }
 }
 
-extension LibraryViewController: UITableViewDelegate { // расширение для класса вьюконтроллера, подписываем на протокол для реализации шаблона делегирование (теперь вьюконтроллер - делегат для tableview) ДЕЛЕГАТ-РАСШИРЕНИЕ
+extension LibraryController: UITableViewDelegate { // расширение для класса вьюконтроллера, подписываем на протокол для реализации шаблона делегирование (теперь вьюконтроллер - делегат для tableview) ДЕЛЕГАТ-РАСШИРЕНИЕ
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         //реализация свайпа влево
@@ -48,7 +48,7 @@ extension LibraryViewController: UITableViewDelegate { // расширение �
     }
 }
 
-extension LibraryViewController: UITableViewDataSource { // расширение для класса вьюконтроллера, подписываем на источник данных для реализации шаблона ДАТАСОРС РАСШИРЕНИЕ
+extension LibraryController: UITableViewDataSource { // расширение для класса вьюконтроллера, подписываем на источник данных для реализации шаблона DataSource РАСШИРЕНИЕ
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newBooks.count //возвращаем общее количество строк которые потенциально могут быть отображены на вьюшке в 1 секции
@@ -73,7 +73,7 @@ extension LibraryViewController: UITableViewDataSource { // расширение
     }
 }
 
-extension LibraryViewController {
+extension LibraryController {
     
     private func configureNavigationBar(){
         let appearance = UINavigationBarAppearance()

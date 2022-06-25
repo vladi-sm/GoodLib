@@ -84,7 +84,7 @@
     </objects>
     <resources>
         <namedColor name="GoodLibBrown">
-            <color red="0.30980393290000002" green="0.21960783" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.31000000238418579" green="0.2199999988079071" blue="0.13699999451637268" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>
